@@ -18,12 +18,12 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    private Product getProductById(@PathVariable String id){
+    public Product getProductById(@PathVariable String id){
         return DataStore.listProducts().stream().filter(prd -> prd.getId().equalsIgnoreCase(id)).findFirst().get();
     }
 
     @PostMapping
-    private Product getProductById(@RequestBody Product product){
+    public Product create(@RequestBody Product product){
         product.setId("PRD " + RandomUtils.nextInt());
         return product;
     }
