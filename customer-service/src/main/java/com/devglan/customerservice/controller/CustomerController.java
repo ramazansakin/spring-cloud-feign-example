@@ -34,9 +34,6 @@ public class CustomerController {
         CustomerDto dto = new CustomerDto();
         BeanUtils.copyProperties(customer, dto);
         dto.setProducts(products);
-        //Product pr1 = productClient.getProductById("PRD1");
-        //Product pr2 = productClient.create(products.get(0));
-        //List<Product> pr3 = productClient.listProducts();
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
